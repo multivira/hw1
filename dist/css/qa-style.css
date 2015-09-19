@@ -3,3 +3,10 @@ md-whiteframe {
     margin: 20px;
     padding: 20px; }
 
+.bold-class{
+    font-size: 30px;
+}
+
+.normal-class{
+    font-size: 10px;
+}

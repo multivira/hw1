@@ -1,8 +1,10 @@
 <div layout="column" layout-align="center center">
     <h1 class="md-display-3">Q&A Angular Training</h1>
     <h2 class="md-display-2">Todo application</h2>
-
+    <div>{{todo.newItem}}</div>
+    <input type="text" ng-model="todo.newItem" />
+    <input type="button" value="Add Todo" ng-click="todo.addItem()">
     <div ng-repeat="todoItem in todo.todoList">
-        Todo item name: {{ todoItem.name }}
+        <input type="checkbox" ng-model="todoItem.done"> <span data-ng-class="{'bold-class': todoItem.done, 'normal-class': !todoItem.done}">{{ todoItem.name }}</span>
     </div>
 </div>

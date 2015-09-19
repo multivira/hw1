@@ -5,13 +5,29 @@
 
     function todoService() {
         var service = {
-            getTodoList: makeTodoList
+            getTodoList: makeTodoList,
+            addTodo: AddTodo
         };
+
+        var todoList = [];
+
+        initTodoList();
 
         return service;
 
+        function AddTodo(todoName){
+            var nextId = todoList.length + 1;
+            todoList.push({name: todoName, id: nextId, done: false});
+        }
+
+        function initTodoList(){
+            AddTodo("Go shopping");
+            AddTodo("Lose 2 kg");
+            AddTodo("Bring wife flowers");
+        }
+
         function makeTodoList() {
-            return [{name: 'go shopping', id: 1}, {name:'loose 2kg', id: 2}, {name:'bring wife flowers', id: 3}];
+            return todoList;
         }
     }
 })();
